@@ -42,17 +42,16 @@ public class Coche {
 	
 	public void consulta() {
 		System.out.println("Modelo: " + this.modelo +
-				"Precio: " + this.preciosiniva);
+				"Precio: " + precioReal() + " €");
 		
 	}
 	
-	public float precioReal() {
-		float iva = (this.porcsiva/100) * this.preciosiniva;
-	
-		return this.preciosiniva + iva;
+	private float precioReal() {
+		return this.preciosiniva + (preciosiniva*(porcsiva/100));
 	}
 	
-	public float actualizarPrecio (byte porcsiva) {
+	public float actualizarPrecio (byte porc) {
+		return this.preciosiniva + (preciosiniva * (porc/100));
 		
 	}
 	

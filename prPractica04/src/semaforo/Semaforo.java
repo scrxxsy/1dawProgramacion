@@ -17,7 +17,7 @@ public class Semaforo {
 
 
 	public String getColor() {
-		return colorSemaforo;
+		return this.colorSemaforo;
 	}
 	
 	/**
@@ -25,7 +25,7 @@ public class Semaforo {
 	 */
 	
 	public  boolean puedoPasar() {
-		if(this.colorSemaforo.equals("Rojo")) {
+		if(this.colorSemaforo.equalsIgnoreCase("Rojo")) {
 			return false;
 		}
 		else {
@@ -34,18 +34,29 @@ public class Semaforo {
 		
 	}
 
-	  public Semaforo(String colorSemaforo) {
+	 /**public Semaforo(String colorSemaforo) {
 		this.colorSemaforo = colorSemaforo;
-	  }
+	  }**/
 
-	
+	  /**
+	   * Redefinición del método toString
+	   */
 	  @Override 
 	    public String toString() {
-	    	return "El semáforo se encuentra en color " + this.colorSemaforo;
+		  
+		  	String cadena;
+		  	switch(this.colorSemaforo) {
+		  		case "Rojo"-> cadena = "No puede pasar";
+		  		case "Amarillo" -> cadena = "Pase con precaución";
+		  		case "Verde" -> cadena = "Puede pasar";
+		  		default -> cadena = "Semáforo averiado";
+		  	}
+		  
+	    	return "El semáforo se encuentra en color " + this.colorSemaforo + " (" + cadena + ")";
 	    			
 	    }
 
-
+ 
 
 	
 

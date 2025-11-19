@@ -5,8 +5,8 @@ public class TestLibro {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Libro b1=new Libro("Yerma","Federico Garcia Lorca",false); 
-		  Libro b2=new Libro("Luces de Bohemia","Ram¢n del Valle Inclan",true); 
-		  Libro b3=new Libro("Luces de Bohemia","Ram¢n del Valle Inclan",true); 
+		  Libro b2=new Libro("Luces de Bohemia","Ramón del Valle Inclan",true); 
+		  Libro b3=new Libro("Luces de Bohemia","Ramón del Valle Inclan",true); 
 		  System.out.println(b1.toString()); 
 		     System.out.println(b2.toString()); 
 		  

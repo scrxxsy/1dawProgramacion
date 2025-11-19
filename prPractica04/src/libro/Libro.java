@@ -15,7 +15,6 @@ public class Libro {
 	 * Constructor
 	 */
 	public Libro(String a, String t, boolean e) {
-		super();
 		this.autor = a;
 		this.titulo = t;
 		this.estado = e;
@@ -50,14 +49,9 @@ public class Libro {
 	 * Método
 	 */
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Libro other = (Libro) obj;
-		return Objects.equals(autor, other.autor) && Objects.equals(titulo, other.titulo);
+		Libro obLibro = (Libro)obj;
+		return this.titulo.equalsIgnoreCase(obLibro.getTitulo()) && this.autor.equalsIgnoreCase(obLibro.getAutor());				
+			
 	}
 
 	

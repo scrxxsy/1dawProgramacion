@@ -47,13 +47,47 @@ public class Coche {
 	}
 	
 	private float precioReal() {
-		return this.preciosiniva + (preciosiniva*(porcsiva/100));
+		return this.preciosiniva + (this.preciosiniva*(porcsiva/100f));
 	}
 	
-	public float actualizarPrecio (byte porc) {
-		return this.preciosiniva + (preciosiniva * (porc/100));
+	public float subirPrecioCoche (byte porc) {
+		return this.preciosiniva + (this.preciosiniva * (porc/100f));
 		
 	}
+	public float bajarPrecioCoche (byte porc) {
+		return this.preciosiniva + (this.preciosiniva * (porc/100f));
+	
+	}
+
+
+
+	/**
+	 * Métodos Getter's y Setter's
+	 */
+	
+
+	public String getModelo() {return modelo;}
+	public void setModelo(String modelo) {this.modelo = modelo;}
+	
+	public String getFabricante() {return fabricante;}
+	public void setFabricante(String fabricante) {this.fabricante = fabricante;}
+	
+	public float getPreciosiniva() {return preciosiniva;}
+	public void setPreciosiniva(float preciosiniva) {this.preciosiniva = preciosiniva;}
+	
+	public byte getPorcsiva() {return porcsiva;}
+	public void setPorcsiva(byte porcsiva) {this.porcsiva = porcsiva;}
+	
+	/**
+	 * Método toString
+	 */
 	
 	
+	@Override
+	public String toString() {
+	    return "\nModelo de coche: " + this.modelo +
+	           "\nFabricante: " + this.fabricante +
+	           "\nPrecio Total: " + precioReal();
+	}
+
 }

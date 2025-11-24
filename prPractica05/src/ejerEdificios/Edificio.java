@@ -52,9 +52,11 @@ public class Edificio {
      */
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() +
+        return this.getClass().getSimpleName().toUpperCase() +
                "\n\tDirección: " + this.dirEdificio.toString() +
-               "\n\tImpuesto de IBI: " + this.calculaIBI() + " €" +
+               (this.calculaIBI() < 0 
+                       ? "\n\tImpuesto de IBI: No debe ningún impuesto IBI" 
+                       : "\n\tImpuesto de IBI: " + this.calculaIBI() + " €") +
                "\n\tNúmero de habitaciones: " + this.numHabitaciones +
                "\n\tNúmero de plantas: " + this.numPlantas +
                "\n\tÁrea del edificio: " + this.areaEdificio;

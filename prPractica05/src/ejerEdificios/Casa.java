@@ -20,6 +20,19 @@ public class Casa extends Edificio{
 		this.numBanios = numBanios;
 	}
 
+	
+	 /** public Casa(String nomCalle, int numDireccion, int codPostal, 
+              int numHabitaciones, int numPlantas, float areaEdificio,
+              int numDormitorios, int numBanios) {
+		  super(nomCalle, numDireccion,codPostal,numHabitaciones,numPlantas, areaEdificio);
+	  }**/
+	
+	public Casa(String nomCalle, int numDireccion, int codPostal, 
+            int numHabitaciones, int numPlantas, float areaEdificio,
+            int numDormitorios, int numBanios) {
+		  this(new Direccion(nomCalle, numDireccion,codPostal)
+				  ,numHabitaciones,numPlantas, areaEdificio, numDormitorios, numBanios);
+	  }
 	/**
 	 * Métodos Getter's y Setter's
 	 */

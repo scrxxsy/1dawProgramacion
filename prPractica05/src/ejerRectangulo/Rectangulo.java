@@ -6,8 +6,8 @@ public class Rectangulo {
 	 * Variables de instancia
 	 */
 	
-	public float ancho;
-	public float altura;
+	public int ancho;
+	public int altura;
 	
 	/**
 	 * Constructores
@@ -41,23 +41,47 @@ public class Rectangulo {
 		return 2 * (this.ancho + this.altura);
 	}
 	
-	public float agrandar(int factor) {
-		return this.altura + factor + this.ancho + factor;
+	public Rectangulo agrandar(int factor) {
+		if (factor < 0) {
+			return null;
+		}
+		this.altura*=factor;
+		this.ancho*=factor;
+		
+		return new Rectangulo(this.ancho, this.altura);
 		
 	}
-	public float agrandar2(int ancho, int alto) {
-		return this.altura + alto + this.ancho + ancho;
+	public Rectangulo agrandar2(int ancho, int alto) {
+		if (ancho < 0 || alto < 0) {
+			return null;
+		}
+		this.altura+=alto;
+		this.ancho+=ancho;
+		
+		return new Rectangulo (this.ancho, this.altura);
 	}
 	
 	/**
 	 * Métodos Getter's y Setter's
 	 */
 	
-	public float getAncho() {return ancho;}
-	public void setAncho(float ancho) {this.ancho = ancho;}
+	public int getAncho() {
+		return ancho;
+	}
 
-	public float getAltura() {return altura;}
-	public void setAltura(float altura) {this.altura = altura;}
+	public int getAltura() {
+		return altura;
+	}
+
+	public void setAncho(int ancho) {
+		this.ancho = ancho;
+	}
+
+	public void setAltura(int altura) {
+		this.altura = altura;
+	}
+
+
 	
 	/**
 	 * Método toString
@@ -68,6 +92,7 @@ public class Rectangulo {
 				"\n\tAncho: " + this.ancho +
 				"\n\tAlto: " + this.altura;
 	}
+
 
 	
 }

@@ -50,7 +50,8 @@ public class Colegio extends Edificio {
 	@Override
 	
 	public String toString() {
-		return super.toString() + "\n\tNúmero de clases: " + this.numClases +
+		return super.toString() + 
+				"\n\tNúmero de clases: " + this.numClases +
 				"\n\tNúmero de oficinas: " + this.numOficinas;
 	}
 }

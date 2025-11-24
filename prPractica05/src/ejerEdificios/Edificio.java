@@ -55,7 +55,7 @@ public class Edificio {
         return this.getClass().getSimpleName().toUpperCase() +
                "\n\tDirección: " + this.dirEdificio.toString() +
                (this.calculaIBI() < 0 
-                       ? "\n\tImpuesto de IBI: No debe ningún impuesto IBI" 
+                       ? "\n\tImpuesto de IBI: No tiene ningún impuesto IBI" 
                        : "\n\tImpuesto de IBI: " + this.calculaIBI() + " €") +
                "\n\tNúmero de habitaciones: " + this.numHabitaciones +
                "\n\tNúmero de plantas: " + this.numPlantas +

@@ -80,6 +80,7 @@ public class Fraccion {
 		return new Fraccion(this.signo*this.denominador, this.numerador);
 	}
 	
+		
 	/**
 	 * Redefinición
 	 */

@@ -36,6 +36,8 @@ public class Guarderia extends Colegio{
 	public float calculaIBI() {
 		return 0;
 	}
+
+	
 	
 	
 	/**

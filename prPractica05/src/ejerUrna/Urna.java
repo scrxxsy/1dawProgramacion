@@ -79,7 +79,7 @@ public class Urna {
 	/**
 	 * Métodos Getter's y Setter's
 	 */
-	private int totalBolas() {
+	public int totalBolas() {
 		return this.bolasBlancas + this.bolasNegras;
 	}
 

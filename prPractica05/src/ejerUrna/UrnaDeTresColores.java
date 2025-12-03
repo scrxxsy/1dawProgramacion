@@ -65,6 +65,11 @@ public class UrnaDeTresColores extends Urna{
 	}
 	
 	@Override
+	public int totalBolas() {
+		return super.totalBolas() + this.bolasRojas;
+	}
+	
+	@Override
 	public String toString() {
 		return this.getClass().getSimpleName().toUpperCase() +
 				"\n\tNúmero de bolas negras: " + this.bolasNegras +

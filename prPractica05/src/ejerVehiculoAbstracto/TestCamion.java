@@ -7,10 +7,8 @@ public class TestCamion {
     public static void main(String[] args) {
 
         // 1️⃣ Constructor: Color + numEjes
-        Camion camion1 = new Camion(Color.RED, 3);
-        camion1.setNumRuedas((byte)6);       // Añadimos ruedas porque el constructor no las define
-        camion1.setCilindrada((short)5000);  // Cilindrada por defecto
-        camion1.setPotencia((short)400);     // Potencia por defecto
+    	Camion camion1 = new Camion(Color.red, (byte)6, (short)5000, (short)400);
+        camion1.setNumEjes(20);
 
         System.out.println("=== CAMION 1 ===");
         System.out.println(camion1);

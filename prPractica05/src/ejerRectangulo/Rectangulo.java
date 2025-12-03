@@ -1,5 +1,7 @@
 package ejerRectangulo;
 
+import java.util.Objects;
+
 public class Rectangulo {
 	
 	/**
@@ -51,14 +53,14 @@ public class Rectangulo {
 		return new Rectangulo(this.ancho, this.altura);
 		
 	}
-	public Rectangulo agrandar2(int ancho, int alto) {
+	public void agrandar2(int ancho, int alto) {
 		if (ancho < 0 || alto < 0) {
-			return null;
+			System.out.println("Debe de ser positivo");
 		}
 		this.altura+=alto;
 		this.ancho+=ancho;
 		
-		return new Rectangulo (this.ancho, this.altura);
+		
 	}
 	
 	/**
@@ -73,12 +75,30 @@ public class Rectangulo {
 		return altura;
 	}
 
-	public void setAncho(int ancho) {
-		this.ancho = ancho;
+	public void setAncho(int nuevoAncho) {
+		if(nuevoAncho<=0) {
+			System.out.println("Debe de ser positivo");
+		}
+		
+		this.ancho = nuevoAncho;
 	}
 
-	public void setAltura(int altura) {
-		this.altura = altura;
+	public void setAltura(int nuevaAltura) {
+		if(nuevaAltura<=0) {
+			System.out.println("Debe de ser positivo");
+		}
+		
+		this.altura = nuevaAltura;
+	}
+
+	/**
+	 * Método Equals
+	 */
+	
+	@Override
+	public boolean equals(Object obj) {
+		Rectangulo otrorectangulo = (Rectangulo) obj;
+		return altura == otrorectangulo.altura && ancho == otrorectangulo.ancho;
 	}
 
 
@@ -92,6 +112,8 @@ public class Rectangulo {
 				"\n\tAncho: " + this.ancho +
 				"\n\tAlto: " + this.altura;
 	}
+
+
 
 
 	

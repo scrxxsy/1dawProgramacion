@@ -62,7 +62,7 @@ public class Camion extends VehiculoAbstracto{
 	@Override 
 	
 	public  double impuesto() {
-		return (this.cilindrada/30 + this.potencia*20 + this.numRuedas*20 + this.numEjes*50);
+		return (getCilindrada()/30f + getPotencia()*20f + getNumRuedas()*20 + this.numEjes*50);
 	}
 
 }

@@ -42,7 +42,7 @@ public class Motocicleta extends VehiculoAbstracto{
 	
 	@Override
 	public double impuesto() {
-		return this.cilindrada/30 + this.potencia*30; 
+		return  getCilindrada()/30f + getPotencia()*30f; 
 	}
 	
 	@Override

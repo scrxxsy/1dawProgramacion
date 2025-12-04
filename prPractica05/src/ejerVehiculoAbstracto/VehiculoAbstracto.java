@@ -8,10 +8,10 @@ public abstract class VehiculoAbstracto {
 	 * Variables de instancia
 	 */
 	
-	public Color colorVehiculo;
-	public byte numRuedas;
-	public short cilindrada;
-	public short potencia;
+	private Color colorVehiculo;
+	private byte numRuedas;
+	private short cilindrada;
+	private short potencia;
 	
 	
 	/**

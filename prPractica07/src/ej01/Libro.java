@@ -31,6 +31,7 @@ public class Libro extends Publicacion implements Prestable{
 	public void presta() {
 		this.prestado=true;
 	}
+	
 
 
 	@Override

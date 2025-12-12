@@ -8,7 +8,7 @@ public class Revista extends Publicacion{
 	
 	public int ejemplar;
 
-	
+
 	/**
 	 * Constructor
 	 */

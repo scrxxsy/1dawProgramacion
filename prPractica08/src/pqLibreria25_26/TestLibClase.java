@@ -2,29 +2,27 @@ package pqLibreria25_26;
 
 import java.util.Scanner;
 
-public class TestLibObj {
+public class TestLibClase {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		byte opcion;
+		int [] miArray = new int [10];
 		
-		LibreriaObjeto ob = new LibreriaObjeto(8);
 		
 		Scanner sc = new Scanner(System.in);
 			
 		do {
-			menu();
-			System.out.print("\nIntroduzca la opcion: ");
-			opcion=sc.nextByte();
+			opcion = menu(sc);
 			
 			switch (opcion) {
 			
-			case 1 -> ob.cargaElementos(sc);
-			case 2 -> ob.cargaElementosAleatorios();
+			case 1 -> LibreriaClase.(miArray, sc);
+			case 2 -> LibreriaClase.cargaElementosAleatorios(sc);
 			case 4 -> System.out.println(ob.elementoMax());
 			case 5 -> System.out.println(ob.elementoMin());
 			case 6 -> System.out.println(ob.sumaElementosArray());
-			case 8 -> ob.ordenacionArray();
+			
 			
 			}
 		}
@@ -35,7 +33,9 @@ public class TestLibObj {
 	
 
 	
-	public static void menu() {
+	public static byte menu(Scanner sc) {
+		
+		byte opcion;
 		System.out.println("\n --- MENU DE OPERACIONES ---");
 		System.out.println("1.- Carga de datos desde teclado");
 		System.out.println("2.- Carga de datos aleatoria");
@@ -54,8 +54,11 @@ public class TestLibObj {
 		System.out.println("15.- Ordenación por el método de Shell");
 		System.out.println("16.- Desordenar array");
 		System.out.println("17.- Salir");
-	
+		System.out.print("\nIntroduzca la opcion: ");
+		opcion=sc.nextByte();
+		
+		return opcion;
 
 		}
-		
+
 	}

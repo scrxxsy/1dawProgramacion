@@ -148,5 +148,70 @@ public class LibreriaObjeto {
 		return min;
 	}
 	
+	/**
+	 * Método para sumar elementos de array
+	 */
 	
+	public int sumaElementosArray() {
+		int suma = 0;
+		
+		for (int i = 0; i<array.length; i++) {
+			suma += array[i];
+		}
+		return suma;
+	}
+	
+	/**
+	 * Métodos de búsqueda (lineal)
+	 */
+	
+	
+	
+	
+	/**
+	 * Métodos de ordenación
+	 */
+	
+	public void ordenacionArray(int [] array) {
+		
+		int i=1, aux; 
+		boolean ordenacion=false; 
+		while(i<array.length && ordenacion == false){ 
+			
+			ordenacion = true; 
+			for(int j=array.length-1; j>=i; j--){ 
+				if(array[j]<array[j-1]){ 
+					aux=array[j]; 
+					array[j]=array[j-1]; 
+					array[j-1]=aux; 
+					ordenacion = false; 
+				} 
+			} 
+			i++; 
+		} 
+	} 
+	
+	/**
+	 * Método ordenación (Selección)
+	 */
+	
+	public static void ordenarSeleccion(int [] array){ 
+		int pos_menor, menor; 
+		for(int i=0; i<=array.length-2; i++){ 
+			pos_menor=i; 
+			menor = array[i]; 
+			for(int j= i+1; j<=array.length-1; j++){ 
+				if(array[j]<menor){ 
+					pos_menor = j; 
+					menor = array[j]; 
+				} 
+			} 
+			array[pos_menor]=array[i]; 
+			array[i]=menor; 
+		} 
+	} 
+	
+	/**
+	 * Método de ordenación 
+	 */
 }

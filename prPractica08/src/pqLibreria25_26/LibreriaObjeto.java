@@ -1,5 +1,4 @@
 package pqLibreria25_26;
-
 import java.util.Scanner;
 
 /**
@@ -164,7 +163,36 @@ public class LibreriaObjeto {
 	/**
 	 * Métodos de búsqueda (lineal)
 	 */
+	public static int busquedaLineal(int [] vector, int numero){
+		   for (int i = 0; i < vector.length; i++) {
+	            if (vector[i] == numero) {
+	                return i;
+	            }
+	        }
+	        return -1;
+	}
 	
+	/**
+	 * Métodos de búsqueda (dicotómica)
+	 */
+	public static int busquedaDic(int [] vector, int numero){
+		  int primero = 0, ultimo = vector.length - 1, mitad;
+	        boolean encontrado = false;
+
+	        while (!encontrado && primero <= ultimo) {
+	            mitad = (primero + ultimo) / 2;
+
+	            if (vector[mitad] == numero) {
+	                return mitad;
+	            } else if (vector[mitad] < numero) {
+	                primero = mitad + 1;
+	            } else {
+	                ultimo = mitad - 1;
+	            }
+	        }
+
+	        return -1;
+	}
 	
 	
 	
@@ -212,6 +240,97 @@ public class LibreriaObjeto {
 	} 
 	
 	/**
-	 * Método de ordenación 
+	 * Método de ordenación (inserción)
 	 */
+	public static void ordenarInsercion(int [] array) {
+		int j, aux;
+		for (int i = 1; i<(array.length); i++) {
+			aux = array[i];
+			j = i-1;
+			while ((j >= 0) && (array[j] > aux)) {
+				array[j+1] = array[j];
+				j--;
+			}
+			array[j+1] = aux;
+		}
+	}
+	/**
+	 * Método de ordenación (Shell)
+	 */
+
+	public static void ordenarShell(int [] array) {
+		 int salto = array.length / 2;
+	        int aux;
+	        while (salto > 0) {
+	            for (int i = salto; i < array.length; i++) {
+	                aux = array[i];
+	                int j = i;
+	                while (j >= salto && array[j - salto] > aux) {
+	                    array[j] = array[j - salto];
+	                    j -= salto;
+	                }
+	                array[j] = aux;
+	            }
+	            salto /= 2;
+	        }
+	}
+	// Método que desordena el array
+	public void desordenarArray() {
+	    int aux, pos;
+	    for (int i = 0; i < array.length; i++) {
+	        pos = (int)(Math.random() * array.length);
+	        aux = array[i];
+	        array[i] = array[pos];
+	        array[pos] = aux;
+	    }
+	}
+
+	// Método insertar por posición
+	public void insertarPos(int pos, int elemento) {
+	    if (pos < 0 || pos > array.length - 1) {
+	        System.out.println("Posición no válida");
+	        return;
+	    }
+
+	    for (int i = array.length - 1; i > pos; i--) {
+	        array[i] = array[i - 1];
+	    }
+
+	    array[pos] = elemento;
+	}
+
+	// Método borrar por posición
+	public void borrarPos(int pos) {
+	    if (pos < 0 || pos > array.length - 1) {
+	        System.out.println("Posición no válida");
+	        return;
+	    }
+
+	    for (int i = pos; i < array.length - 1; i++) {
+	        array[i] = array[i + 1];
+	    }
+
+	    array[array.length - 1] = 0;
+	}
+
+	// Método borrar por elemento (primera aparición)
+	public void borrarElemento(int elemento) {
+	    int pos = busquedaLineal(array, elemento);
+	    if (pos != -1) {
+	        borrarPos(pos);
+	    } else {
+	        System.out.println("Elemento no encontrado");
+	    }
+	}
+
+	// Método borrar todas las apariciones de un elemento
+	public void borrarTodos(int elemento) {
+	    for (int i = 0; i < array.length; i++) {
+	        if (array[i] == elemento) {
+	            borrarPos(i);
+	            i--; 
+	        }
+	    }
+	}
+
 }

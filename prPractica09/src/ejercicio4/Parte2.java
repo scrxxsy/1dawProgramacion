@@ -46,7 +46,7 @@ public class Parte2 {
 		System.out.println(cad.contains("un vestido nigga")? "Si está" : "No está");
 //		• Busca todas las ocurrencias de una cadena. 
 		
-
+		
 //		• Extrae de tu cadena la segunda palabra y almacénala en una nueva cadena. 
 //		• A partir de un array de caracteres crea un objeto de tipo cadena. 
 //		• Muestra el valor Unicode de cada uno de los caracteres de la cadena anterior (codePointAt). 

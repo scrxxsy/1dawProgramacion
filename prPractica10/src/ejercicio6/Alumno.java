@@ -1,11 +1,10 @@
 package ejercicio6;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Objects;
+import java.util.*;
 
-public class Alumno implements Comparable<Alumno>{
+
+public class Alumno implements Comparator<Alumno>{
 
 	/**
 	 * Variables de instancia
@@ -146,6 +145,12 @@ public class Alumno implements Comparable<Alumno>{
 		Alumno other = (Alumno) obj;
 		return Objects.equals(apellido1, other.apellido1) && Objects.equals(apellido2, other.apellido2)
 				&& Objects.equals(dni, other.dni) && Objects.equals(nombre, other.nombre);
+	}
+
+	@Override
+	public int compare(Alumno o1, Alumno o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

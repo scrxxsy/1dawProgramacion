@@ -72,7 +72,14 @@ public class Test {
 		grupoDAW2.sort(null);
 		
 		
-
+		//Clase externa
+		grupoDAW.getMiGrupo().sort(new Comparador());
+		System.out.println(grupoDAW.toString());
+		
+		
+		//Clase anónima
+		
+		
 	}
 
 }

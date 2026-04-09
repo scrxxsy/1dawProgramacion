@@ -19,7 +19,6 @@ public class Ejercicio7 {
 		
 		Deque<String> pila = new LinkedList<>();
 		
-		Deque<String> pila2 = new ArrayDeque<>();
 		
 		String cad = "((2+4)*(9-2))";
 		
@@ -28,9 +27,19 @@ public class Ejercicio7 {
 				if(cad.charAt(cont)=='(') {
 					pila.push("(");
 				}
+				else if (cad.charAt(cont)==')') {
+					pila.pop();
 				}
-				
+					
 			
+			
+			}
+			
+			if(pila.isEmpty()) {
+				System.out.println("Cadena correctamente balanceda");
+			}
+			else {
+				System.out.println("Se han cerrado más paréntesis de la cuenta");
 			}
 		}
 		catch (NoSuchElementException e) {
